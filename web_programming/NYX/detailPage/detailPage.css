@@ -1,0 +1,299 @@
+body,
+a {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+@font-face {
+  font-family: "MapoFlowerIsland";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes showText {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+body {
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.wrapper {
+  height: 100vh; /*viewport height*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  min-width: 800px;
+  min-height: 500px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /*가로정렬*/
+  align-items: center; /*세로정렬*/
+}
+
+.main-container {
+  min-width: 700px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: showText 2s;
+}
+
+header {
+  width: 80%;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 60px;
+  font-weight: 200;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+section {
+  width: 80%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.explain-section {
+  width: 50%;
+  height: 100%;
+  padding-right: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.explain-text {
+  color: white;
+  font-family: "MapoFlowerIsland";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2em;
+}
+
+.product-section {
+  width: 50%;
+  color: white;
+  font-family: "MapoFlowerIsland";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.product-first {
+  width: 100%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+}
+
+.product-second {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+}
+
+.product-third {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+}
+
+nav {
+  min-width: 95px;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.another-scent,
+.home {
+  margin: 5% 0;
+}
+
+nav a {
+  display: block;
+  color: white;
+  font-size: 14px;
+  font-family: "MapoFlowerIsland";
+  font-weight: 300;
+  line-height: 2;
+}
+
+/*modal window*/
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.modal:target .window {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.window {
+  transition: all 2s;
+  background-color: #222;
+  flex-basis: 800px;
+  display: flex;
+  margin: 0 20px;
+  opacity: 0;
+}
+
+.window-left {
+  width: 40%;
+  padding: 20px;
+}
+
+.window-left img {
+  width: 300px;
+  height: 300px;
+}
+
+.window-right {
+  width: 60%;
+  background-color: #191919;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.window-right h6 {
+  margin: 5px 0;
+  font-size: 13px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.window-right h2 {
+  margin: 0;
+  font-size: 25px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.window-right p {
+  margin: auto 0;
+  font-size: 13px;
+  font-family: "NanumGothic", sans-serif;
+  font-weight: 200;
+  line-height: 2em;
+  letter-spacing: 0.1em;
+}
+
+.button {
+  color: #191919;
+  display: block;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 12px;
+  font-family: "NanumGothic", sans-serif;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+}
+
+.button.line {
+  background-color: transparent;
+}
+
+.button + .button {
+  margin-top: 10px;
+}
+
+/* color */
+.l {
+  background-color: #eccef5;
+  border: 1px solid #eccef5;
+}
+
+.l.line {
+  color: #eccef5;
+}
+
+.c {
+  background-color: #f3f781;
+  border: 1px solid #f3f781;
+}
+
+.c.line {
+  color: #f3f781;
+}
+
+.b {
+  background-color: green;
+  border: 1px solid green;
+}
+
+.b.line {
+  color: green;
+}
+
+.m {
+  background-color: lightcoral;
+  border: 1px solid lightcoral;
+}
+
+.m.line {
+  color: lightcoral;
+}
