@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+  <title>Humidity Notification!</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type=text/javascript>
+        $(function() {
+          $('a#mail').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_send_mail',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+
+	$(function() {
+          $('a#terminate').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/background_terminate',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="title2">
+        <h1>이제 알림을 받을 수 있습니다!</h1>
+      </div>
+      <div class="container-bottom">
+        <p>알림 받을 성함과 이메일 주소를 확인해주세요.</p>
+        <div class="contents">
+          <table>
+            <tbody>
+              {% for key, value in result.items() %}
+              <tr>
+                <td>{{key}} : </td>
+                <td>{{value}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>	
+        </div>
+	<p class="info">알림을 받으려면 Start, 그만 받고 싶다면 Stop을 눌러주세요.</p>
+	<div class="buttons">
+	  <a href="http://172.20.10.14:3000"><button class="submitBtn">Home</button></a>
+	  <a href=# id=mail><button class="submitBtn">Start</button></a>
+	  <a href=# id=terminate><button class="submitBtn">Stop</button></a>
+	</div>
+      </div>
+    </div>
+  </div>
+</body>
